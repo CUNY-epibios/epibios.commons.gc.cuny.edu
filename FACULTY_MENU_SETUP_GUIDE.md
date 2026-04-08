@@ -270,35 +270,6 @@ This shows faculty list in sidebar on any page.
 
 ---
 
-## Future Reference: Adding a New Faculty Member
-
-Since the directory is now driven dynamically by Elementor and the ACF "Faculty Type" field, **you do NOT need to update the navigation menu when someone joins or leaves the department.**
-
-Simply follow these steps to add a new faculty member, and they will automatically appear in the correct directory:
-
-1. **Pages** → **Add New**
-2. **Set Title**: Use faculty member's name
-   - Example: `John Doe`
-3. **Add Content**: Add their bio, photo, and details.
-4. **Assign Faculty Type**: Using the ACF field "Faculty Type" setup in the Implementation Guide, select Full-time, Adjunct, or Affiliated.
-5. **Set Parent Page**:
-   - In the right sidebar, find **"Page Attributes"** panel
-   - Under **"Parent"**, select **"Faculty"**
-   - This makes it a child of the Faculty page
-6. **Set Permalink**:
-   - Click "Edit" next to permalink
-   - Should be: `/faculty/john-doe/`
-   - WordPress automatically adds the parent slug
-7. **Set Featured Image** (optional):
-   - Click "Set featured image"
-   - Upload faculty photo if available
-8. **Set Author**:
-   - In right sidebar, **"Author"** dropdown
-   - Select the faculty member (if account exists)
-9. **Publish**
-
----
-
 ## Need Help?
 
 - **WordPress Documentation**: https://wordpress.org/support/article/wordpress-menu-user-guide/

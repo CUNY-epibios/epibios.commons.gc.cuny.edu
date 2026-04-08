@@ -9,7 +9,9 @@ The site is now live at [epibios.commons.gc.cuny.edu](https://epibios.commons.gc
 * **Architecture:** A clean site structure mapping out where everything goes (`SITE_MAP.md`).
 * **Tool Selection:** We verified which CUNY Commons plugins are available for free to achieve our exact goals without external costs.
 
-## Remaining Tasks
+## Ongoing Maintenance
+
+Once the remaining setup tasks above are completed, day-to-day operations (adding new faculty, posting news, adding student success stories, and updating evaluations) are covered in the **[`MAINTENANCE_GUIDE.md`](MAINTENANCE_GUIDE.md)**.
 
 Here are your exact next steps to finish the site:
 

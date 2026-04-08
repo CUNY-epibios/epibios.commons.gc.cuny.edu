@@ -290,55 +290,6 @@ Already included in landing page:
 
 ---
 
-## Content Guidelines
-
-### When Creating Student Success Posts:
-
-1. **Always Include**:
-   - Student name (or "Doctoral Student" if privacy preferred)
-   - Degree program (MPH, PhD, DPH)
-   - Type of achievement
-   - Brief description of accomplishment
-
-2. **Optionally Include**:
-   - Graduation year
-   - Current position and organization
-   - Student photo (with permission)
-   - Links to publications, presentations, or projects
-   - Student quote
-   - LinkedIn profile
-
-3. **Privacy Considerations**:
-   - Always get student permission before posting
-   - Allow anonymous option ("Doctoral Student" instead of name)
-   - No personal information without consent
-   - Photos require explicit permission
-
-4. **SEO Best Practices**:
-   - Use descriptive titles
-   - Include relevant keywords (conference names, topics, achievements)
-   - Add alt text to images
-   - Link to related faculty research where appropriate
-
----
-
-## Maintenance
-
-### Weekly
-- Check for new student achievements to feature
-- Respond to student submissions
-
-### Monthly
-- Review and update featured students on landing page
-- Archive old posts (keep published but feature recent ones)
-
-### Semester
-- Solicit student achievement submissions
-- Feature graduating students
-- Update statistics (number of publications, presentations, etc.)
-
----
-
 ## Benefits of This Approach
 
 ✅ **Dynamic**: Posts automatically display on landing page
