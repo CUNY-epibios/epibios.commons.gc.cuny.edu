@@ -86,12 +86,14 @@ The website uses "The Events Calendar" plugin. This automatically generates a fu
 
 ## 4. Course Evaluations
 
-Course evaluations are collected via **Gravity Forms**. 
+Course evaluations are displayed using the **TablePress** plugin. 
 
-### To view or export results:
-1. Go to **Forms** → **Entries**.
-2. Select the Course Evaluation form from the dropdown at the top.
-3. You can view individual responses here, or click **Export** on the left menu to download the data as a CSV for Excel.
+### To update the evaluations data:
+1. Generate the updated evaluations CSV file using the [`teachingevals` R package](https://github.com/CUNY-epibios/teachingevals) (Note: this is a private GitHub repository).
+2. In the WordPress dashboard, go to **TablePress** → **Import a Table**.
+3. Select your generated CSV file as the Import Source.
+4. Under "Import Options", choose to **Replace existing table** and select the Course Evaluations table from the list.
+5. Click **Import** to update the data displayed on the site.
 
 ---
 
@@ -104,3 +106,7 @@ Course evaluations are collected via **Gravity Forms**.
 ### Monthly
 *   Review the Student Handbook & Resources page to ensure handbooks and guidelines are current.
 *   Check that no broken links exist on the main menu.
+
+### Every Semester
+*   Update the Course Evaluations form with the previous semester's evaluations.
+*   Review the Faculty Directory to ensure all information is current (e.g., new hires, adjunct faculty who have not taught in the past year).
