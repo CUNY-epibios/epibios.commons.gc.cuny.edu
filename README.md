@@ -22,7 +22,9 @@ Here are your exact next steps to finish the site:
 
 2. **Add Student Success & Events (Assistant)**
    * **Student Success & Research:** The old static "Research" page (currently in draft status) is obsolete. Instead, use the Custom Post Type showcase outlined in [`STUDENT_SUCCESS_GUIDE.md`](STUDENT_SUCCESS_GUIDE.md) to set up a dynamic portfolio of student publications, presentations, and career placements. Add it to the navigation menu.
-   * **News & Events:** A sample news post ("This is a News Post!") has been created. Set up *The Events Calendar* plugin and configure category-based news feeds. Add these pages to the menu.
+   * **News & Events:** 
+     * *News*: A sample news post has been created. Configure category-based news feeds (e.g., Department News, Faculty Achievements) and add the blog to the menu.
+     * *Events*: Ensure **The Events Calendar** plugin is activated. This automatically generates a full calendar with built-in "Add to Calendar" buttons for visitors at the `/events/` URL. Simply add a custom link to `/events/` in your main navigation menu under "News & Events".
 
 3. **Review and Launch**
    * Check that pages look correct and test the Course Evaluations form to ensure it captures data securely. (Note: Security and backups are handled inherently by the CUNY Academic Commons infrastructure, eliminating the need for third-party security plugins). Finalize any styling before officially announcing the new site!

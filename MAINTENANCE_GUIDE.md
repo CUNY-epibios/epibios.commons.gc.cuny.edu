@@ -74,11 +74,13 @@ We use the standard WordPress "Posts" feature (the blog) for time-sensitive, chr
 
 *(Note: If a student wins a massive national award, you should create a Student Success Story for their permanent portfolio AND publish a News Post to announce it on the blog!)*
 
-### The Events Calendar
+### The Events Calendar (Upcoming Events)
+The website uses "The Events Calendar" plugin. This automatically generates a full, interactive calendar view at the `/events/` URL, and **automatically includes "Add to Google Calendar" and "iCal Export" buttons** on every event for visitors.
+
 1. Go to **Events** → **Add New**.
 2. Enter the title and description of the event.
 3. Scroll down to the **"The Events Calendar"** meta box to set the Date, Time, Location/Venue, and Organizer.
-4. **Publish**. It will automatically appear on the `/events/` calendar page.
+4. **Publish**. It will automatically appear on the public `/events/` calendar page.
 
 ---
 
