@@ -39,16 +39,19 @@ If a faculty member leaves:
 
 ---
 
-## 2. Adding Student Success Stories
+## 2. Adding Student Success & Research Stories
 
-The Student Success section operates on a Custom Post Type, meaning you just create a new post, and it automatically gets added to the Student Success landing page.
+The Student Success & Research section operates on a Custom Post Type, meaning you just create a new post, and it automatically gets added to the Student portfolio landing page.
 
 ### How to Create a New Story
 
-1. Go to **Student Success Stories** → **Add New** in the left sidebar.
+1. Go to **Student Success Stories** in the left sidebar dashboard menu, then click the **Add New Student Success Story** button at the top.
 2. **Title**: Write a descriptive title (e.g., *"MH Ditmore Publishes Research in JMIR Human Factors"*).
 3. **Content**: Write a short blurb about the achievement.
-4. **Custom Fields**: Fill out the provided fields (Student Name, Degree Program, Graduation Year, Achievement Type).
+4. **Tag the Achievement (ACF)**: Scroll down to the ACF custom fields block and assign the metadata. This is critical for allowing visitors to filter the portfolio grid!
+   - **Achievement Type:** Select one of the available choices: `Publication`, `Conference Presentation`, `Award/Honor`, `Career Achievement`, or `Research Project`.
+   - **Degree Program:** Select `MPH`, `PhD`, or `DPH`.
+   - **Graduation Year:** Enter their graduation year (if applicable).
 5. **Featured Image**: Upload a photo of the student or their work.
 6. **Publish**.
 
@@ -60,12 +63,16 @@ The Student Success section operates on a Custom Post Type, meaning you just cre
 
 ## 3. Posting News & Events
 
-### Department News
+### Department News & Faculty Achievements
+We use the standard WordPress "Posts" feature (the blog) for time-sensitive, chronological updates. **This is where you should highlight Faculty Awards and Achievements.**
+
 1. Go to **Posts** → **Add New**.
-2. Write your news article.
+2. Write your news article (e.g., "Dr. Waldron Awarded New NIH Grant").
 3. In the right sidebar, assign it to the relevant **Category** (e.g., *Department News*, *Faculty Achievements*, *Research Highlights*).
 4. Add a **Featured Image** so it looks good on social media and the blog feed.
 5. **Publish**.
+
+*(Note: If a student wins a massive national award, you should create a Student Success Story for their permanent portfolio AND publish a News Post to announce it on the blog!)*
 
 ### The Events Calendar
 1. Go to **Events** → **Add New**.
@@ -77,7 +84,7 @@ The Student Success section operates on a Custom Post Type, meaning you just cre
 
 ## 4. Course Evaluations
 
-Course evaluations are collected via **Gravity Forms** on a password-protected page. 
+Course evaluations are collected via **Gravity Forms**. 
 
 ### To view or export results:
 1. Go to **Forms** → **Entries**.
@@ -93,5 +100,5 @@ Course evaluations are collected via **Gravity Forms** on a password-protected p
 *   Add upcoming department seminars to the Events Calendar.
 
 ### Monthly
-*   Review the "Internal Resources" password-protected page to ensure handbooks and guidelines are current.
+*   Review the Student Handbook & Resources page to ensure handbooks and guidelines are current.
 *   Check that no broken links exist on the main menu.

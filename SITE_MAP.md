@@ -19,20 +19,14 @@ Home (/)
 │       └── ...
 │
 ├── Students
-│   ├── Student Research (consolidated page)
-│   ├── Student Success Stories
-│   └── Student Resources
+│   ├── Student Success & Research
+│   └── Student Handbook & Resources (protected)
 │
-├── Resources ▼ (Dropdown Menu)
-│   ├── Student Handbook (protected)
-│   ├── Course Evaluations
-│   ├── Capstone Guides
-│   └── Internal Documents (protected)
+├── Course Evaluations
 │
 ├── News & Events
 │   ├── Department News (blog format)
-│   ├── Upcoming Events
-│   └── Achievements & Awards
+│   └── Upcoming Events
 │
 └── Contact
 ```
@@ -47,14 +41,9 @@ Home (/)
    - Adjunct Faculty
    - Affiliated Faculty
 4. **Students**
-   - Student Research
-   - Success Stories
-   - Resources
-5. **Resources** (dropdown)
-   - Student Handbook
-   - Course Evaluations
-   - Capstone Guides
-   - Internal Documents
+   - Student Success & Research
+   - Student Handbook & Resources
+5. **Course Evaluations**
 6. **News & Events**
 7. **Contact**
 
@@ -77,38 +66,28 @@ Home (/)
     - Lab/group information (editable by faculty)
 
 ### Student Section
-- **Student Research Page**: `/students/research/`
-  - Consolidated list of all student publications and presentations
-  - Organized chronologically or by year
+- **Student Success & Research**: `/students/success/`
+  - A dynamic portfolio grid of student achievements
+  - Includes publications, conference presentations, awards, and career placements
+  - Filterable by achievement type and degree program
 
-- **Success Stories**: `/students/success/`
-  - Student achievements, awards, and career placements
-  - Alumni spotlights
-
-- **Student Resources**: `/students/resources/`
-  - Links to handbooks, forms, and guides
-  - Academic and career resources
-
-### Resources Section
-- **Student Handbook**: `/resources/student-handbook/`
+- **Student Handbook & Resources**: `/students/handbook/`
+  - Acts as an index page linking to all critical student materials
   - Existing handbook content (already in export)
+  - Capstone templates, examples, and requirements
+  - General academic and career resources
 
-- **Course Evaluations**: `/resources/course-evaluations/`
-  - Protected page (login required)
+### Course Evaluations Section
+- **Course Evaluations**: `/course-evaluations/`
   - Form integration for submission
-  - Historical evaluations storage
-
-- **Capstone Guides**: `/resources/capstone-guides/`
-  - Templates, examples, and requirements
-
-- **Internal Documents**: `/resources/internal/`
-  - Password-protected area for faculty/student resources
+  - Historical evaluations storage (publicly viewable)
 
 ### News & Events
 - **News**: `/news/` (blog format)
   - Department announcements
-  - Faculty achievements
+  - Faculty achievements and awards
   - Research highlights
+  - Major student awards (cross-posted from Success Stories)
 
 - **Events**: `/events/`
   - Calendar view
@@ -148,7 +127,7 @@ Based on the export analysis, the following should be removed as they duplicate 
 3. **Community & culture**
    - News and achievements
    - Events and seminars
-   - Student success stories
+   - Student Success & Research portfolio
 
 ## Implementation Notes
 

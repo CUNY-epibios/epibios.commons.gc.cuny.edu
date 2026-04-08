@@ -20,8 +20,8 @@ Here are your exact next steps to finish the site:
    * Offer faculty access to edit their pages, then manually invite them via the CUNY Commons "Users -> Add New" interface using their official campus emails. Once they activate their accounts, you can bulk-reassign authorship of their pages to them.
    * Review [`FACULTY_MENU_SETUP_GUIDE.md`](FACULTY_MENU_SETUP_GUIDE.md) for Elementor layout instructions for the main Faculty directory page.
 
-2. **Add Student Research & Events (Assistant)**
-   * **Research/Student Research:** The "Research" page is currently in draft status. Finish it and publish it. Consider using the Custom Post Type showcase outlined in [`STUDENT_SUCCESS_GUIDE.md`](STUDENT_SUCCESS_GUIDE.md) to set up student success posts. Add it to the navigation menu.
+2. **Add Student Success & Events (Assistant)**
+   * **Student Success & Research:** The old static "Research" page (currently in draft status) is obsolete. Instead, use the Custom Post Type showcase outlined in [`STUDENT_SUCCESS_GUIDE.md`](STUDENT_SUCCESS_GUIDE.md) to set up a dynamic portfolio of student publications, presentations, and career placements. Add it to the navigation menu.
    * **News & Events:** A sample news post ("This is a News Post!") has been created. Set up *The Events Calendar* plugin and configure category-based news feeds. Add these pages to the menu.
 
 3. **Review and Launch**
