@@ -29,7 +29,8 @@ Gemini will execute a Python script to perform the following operations on the X
 - Once provided (see Missing Data section), synthesize `<item>` blocks for all Affiliated faculty with the `faculty_type` set to `Affiliated`.
 
 ### D. Shortcodes and Formatting
-- Apply the `[schopufe_publications user_id="..."]` shortcode to faculty with known Google Scholar IDs (e.g., Lisa Hitch).
+- Ensure all faculty types (Full-Time, Adjunct, Affiliated) support the `[schopufe_publications user_id="..."]` shortcode.
+- Apply this shortcode to any faculty member with a known Google Scholar ID (e.g., Lisa Hitch, Theresa Diaz) so their publications are automatically listed.
 
 ---
 
@@ -63,6 +64,7 @@ Based on `adjunctfaculty.csv`, the following adjunct faculty profiles will be ge
    - **Title & Affiliation:** Unit Chief, Epidemiology, Monitoring and Evaluation (EME) unit within the Maternal, Newborn, Child and Adolescent Health and Ageing (MCA) Department, World Health Organization (WHO)
    - **Contact:** tdiaz1000@gmail.com
    - **Bio Link:** [CUNY ISPH Profile](https://cunyisph.org/team/theresa-diaz/)
+   - **Google Scholar:** `-b6BASwAAAAJ`
    - **Contributions & Collaborations:** Co-teaching implementation science course; collaborating on grant proposals with ISPH; hosting student practicums/fieldwork; serving on dissertation committees. Connects the department to global public health practice.
 
 ---
