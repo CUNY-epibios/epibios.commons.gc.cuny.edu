@@ -30,7 +30,7 @@ Since the initial bulk import is finished, you only need to follow these steps w
 1. **Pages** → **Add New**
 
 2. **Set Title**: Use faculty member's name
-   - Example: `Lisa Hitch`
+   - Example: `John Doe`
 
 3. **Add Content**: Add their bio, photo, and details.
 
@@ -43,7 +43,7 @@ Since the initial bulk import is finished, you only need to follow these steps w
 
 6. **Set Permalink**:
    - Click "Edit" next to permalink
-   - Should be: `/faculty/lisa-hitch/`
+   - Should be: `/faculty/john-doe/`
    - WordPress automatically adds the parent slug
 
 7. **Set Featured Image** (optional):
