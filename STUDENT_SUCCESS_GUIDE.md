@@ -7,7 +7,6 @@ The Student Success page replaces the generic "Student Research" page with a dyn
 ## Structure
 
 ### Landing Page
-**File**: `student_success_landing_page.html`
 **URL**: `/students/success/` or `/student-success/`
 
 This page provides:
@@ -130,7 +129,7 @@ This page provides:
 
 1. Go to: Pages → Add New
 2. Title: "Student Success"
-3. Copy content from `student_success_landing_page.html`
+3. Add introductory content explaining student achievements
 4. Set permalink: `/students/success/` or `/student-success/`
 5. Publish
 

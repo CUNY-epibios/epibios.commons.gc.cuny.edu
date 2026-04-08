@@ -45,17 +45,16 @@ This method automatically creates the dropdown menu structure based on parent-ch
 
 3. **Publish** the page
 
-### Step 2: Import Individual Faculty Pages (Child Pages)
+### Step 2: Import Missing Faculty Pages (Child Pages)
 
-For **each of the 14 faculty pages** in the `faculty_pages/` directory:
+13 of the 14 faculty pages have already been imported. For the remaining faculty member (Lisa Hitch), and any future faculty:
 
 1. **Pages** → **Add New**
 
 2. **Set Title**: Use faculty member's name
-   - Example: `Levi Waldron`
+   - Example: `Lisa Hitch`
 
-3. **Copy Content**: From the corresponding `.html` file
-   - Example: Copy content from `faculty_pages/levi-waldron.html`
+3. **Add Content**: Add their bio, photo, and details.
 
 4. **Set Parent Page**:
    - In the right sidebar, find **"Page Attributes"** panel
@@ -64,7 +63,7 @@ For **each of the 14 faculty pages** in the `faculty_pages/` directory:
 
 5. **Set Permalink**:
    - Click "Edit" next to permalink
-   - Should be: `/faculty/levi-waldron/`
+   - Should be: `/faculty/lisa-hitch/`
    - WordPress automatically adds the parent slug
 
 6. **Set Featured Image** (optional):
@@ -76,8 +75,6 @@ For **each of the 14 faculty pages** in the `faculty_pages/` directory:
    - Select the faculty member (if account exists)
 
 8. **Publish**
-
-9. **Repeat** for all 14 faculty members
 
 ### Step 3: Create the Navigation Menu
 
@@ -285,9 +282,9 @@ Create this content for the main **Faculty** page:
 
 ---
 
-## Quick Reference: All 14 Faculty Pages
+## Quick Reference: List of All 14 Faculty Members
 
-Import these in order:
+Ensure all are present and correctly linked:
 
 | # | Faculty Name | File | URL Slug |
 |---|--------------|------|----------|
@@ -426,7 +423,7 @@ This shows faculty list in sidebar on any page.
 
 ### Quick Steps:
 1. ✅ Create "Faculty" parent page
-2. ✅ Import 14 faculty pages as children
+2. ✅ Import missing faculty pages as children
 3. ✅ Go to Appearance → Menus
 4. ✅ Add Faculty + all child pages to menu
 5. ✅ Indent child pages under Faculty
@@ -435,9 +432,9 @@ This shows faculty list in sidebar on any page.
 
 **Time Required**:
 - Parent page: 15 minutes
-- Each faculty page: 5-10 minutes × 14 = 70-140 minutes
+- Missing faculty pages: 5-10 minutes per page
 - Menu setup: 15 minutes
-- **Total: ~2-3 hours**
+- **Total: ~30-45 minutes**
 
 ---
 

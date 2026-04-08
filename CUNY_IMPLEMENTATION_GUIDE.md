@@ -8,18 +8,12 @@
 ## 📚 Document Roadmap
 
 ### Start Here
-1. **[EXECUTIVE_SUMMARY.md](EXECUTIVE_SUMMARY.md)** - Original project overview
-2. **[CUNY_IMPLEMENTATION_GUIDE.md](CUNY_IMPLEMENTATION_GUIDE.md)** ⭐ **YOU ARE HERE** - Quick start for CUNY
-3. **[TECHNICAL_RECOMMENDATIONS_CUNY.md](TECHNICAL_RECOMMENDATIONS_CUNY.md)** - Full implementation guide with CUNY plugins
-4. **[PLUGIN_REQUISITION_JUSTIFICATIONS.md](PLUGIN_REQUISITION_JUSTIFICATIONS.md)** - Request missing critical plugins
+1. **[CUNY_IMPLEMENTATION_GUIDE.md](CUNY_IMPLEMENTATION_GUIDE.md)** ⭐ **YOU ARE HERE** - Quick start for CUNY
+2. **[TECHNICAL_RECOMMENDATIONS_CUNY.md](TECHNICAL_RECOMMENDATIONS_CUNY.md)** - Full implementation guide with CUNY plugins
+3. **[PLUGIN_REQUISITION_JUSTIFICATIONS.md](PLUGIN_REQUISITION_JUSTIFICATIONS.md)** - Request missing critical plugins
 
 ### Content Files
-- **[faculty_pages/](faculty_pages/)** - 14 ready-to-import faculty HTML pages
-- **[student_page.html](student_page.html)** - Consolidated student research page
 - **[SITE_MAP.md](SITE_MAP.md)** - Proposed site architecture
-
-### Original Documentation (Non-CUNY)
-- **[TECHNICAL_RECOMMENDATIONS.md](TECHNICAL_RECOMMENDATIONS.md)** - Original with premium plugins
 
 ---
 
@@ -110,14 +104,15 @@ We analyzed the **612 plugins available in CUNY Academic Commons** and updated a
 
 ### Phase 2: Faculty Pages (Week 2)
 
-#### Import Faculty Pages:
+#### Import Missing Faculty Pages:
 ```bash
-For each file in faculty_pages/:
+13 of the 14 faculty pages have already been imported.
+For the remaining faculty member (Lisa Hitch):
 1. Create new page: Pages → Add New
 2. Set parent page to "Faculty"
-3. Copy/paste HTML content from file
+3. Add content for the faculty member
 4. Add faculty member as Author
-5. Set URL slug (from INDEX.md)
+5. Set URL slug
 6. Publish
 ```
 
@@ -141,6 +136,8 @@ For each faculty member:
 ---
 
 ### Phase 3: Course Evaluations (Week 2-3)
+
+*(Note: Historical course evaluation data has already been imported using TablePress).*
 
 #### Create Evaluation Form:
 ```
@@ -191,11 +188,11 @@ For each faculty member:
 5. Publish
 ```
 
-#### Import Student Research Page:
+#### Configure Student Research Page:
 ```
-1. Pages → Add New
-2. Title: "Student Research"
-3. Copy content from student_page.html
+1. Find the existing "Research" page (currently in draft status)
+2. Rename to "Student Research" if preferred
+3. Add content using the Student Success custom post type showcase
 4. Publish
 5. Add to Students menu
 ```
@@ -351,7 +348,7 @@ Since security plugins may not be available:
 
 ### Before Going Live:
 ```
-□ All 14 faculty pages imported
+□ 13 faculty pages imported (Lisa Hitch pending)
 □ Faculty user accounts created
 □ Elementor frontend editing tested
 □ Course evaluation form tested
