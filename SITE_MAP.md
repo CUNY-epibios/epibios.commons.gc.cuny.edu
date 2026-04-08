@@ -24,8 +24,8 @@ Home (/)
 │   └── Student Resources
 │
 ├── Resources ▼ (Dropdown Menu)
-│   ├── Student Handbook
-│   ├── Course Evaluations (protected)
+│   ├── Student Handbook (protected)
+│   ├── Course Evaluations
 │   ├── Capstone Guides
 │   └── Internal Documents (protected)
 │
