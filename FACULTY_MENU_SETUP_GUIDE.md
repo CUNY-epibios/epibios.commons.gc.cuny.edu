@@ -23,40 +23,7 @@ Faculty ▼
 
 ---
 
-## Step 1: Adding a New Faculty Member Manually
-
-Since the initial bulk import is finished, you only need to follow these steps when a **new** faculty member joins the department:
-
-1. **Pages** → **Add New**
-
-2. **Set Title**: Use faculty member's name
-   - Example: `John Doe`
-
-3. **Add Content**: Add their bio, photo, and details.
-
-4. **Assign Faculty Type**: Using the ACF field "Faculty Type" setup in the Implementation Guide, select Full-time, Adjunct, or Affiliated.
-
-5. **Set Parent Page**:
-   - In the right sidebar, find **"Page Attributes"** panel
-   - Under **"Parent"**, select **"Faculty"**
-   - This makes it a child of the Faculty page
-
-6. **Set Permalink**:
-   - Click "Edit" next to permalink
-   - Should be: `/faculty/john-doe/`
-   - WordPress automatically adds the parent slug
-
-7. **Set Featured Image** (optional):
-   - Click "Set featured image"
-   - Upload faculty photo if available
-
-8. **Set Author**:
-   - In right sidebar, **"Author"** dropdown
-   - Select the faculty member (if account exists)
-
-9. **Publish**
-
-## Step 2: Update the Navigation Menu
+## Step 1: Create Category Pages and the Navigation Menu
 
 Because listing potentially dozens of faculty in a single dropdown is bad for usability, we recommend grouping them by type. 
 
@@ -81,15 +48,15 @@ Because listing potentially dozens of faculty in a single dropdown is bad for us
 
 ---
 
-## Step 3: Displaying the Faculty Directory & Featured Images
+## Step 2: Displaying the Faculty Directory & Featured Images
 
 By default, the imported XML sets up the data correctly in the backend, but your WordPress theme may not render it automatically. The assistant must address two critical display issues:
 
 ### Issue A: The Faculty Directory Only Shows Full-Time Faculty
-**Problem:** The main `/faculty/` page consists of static HTML from the legacy site. Simply importing new adjunct/affiliated child pages does not automatically rewrite that static HTML to include them.
+**Problem:** The main `/faculty/` page currently consists of static HTML from the legacy site. The old site used to list out every single faculty member by name here.
 **Solution:**
 1. Edit the "Faculty" page with Elementor.
-2. Delete the static legacy HTML grid.
+2. Delete the static legacy HTML grid of names.
 3. Drag in a dynamic **"Posts"** or **"Portfolio"** widget.
 4. Set the query source to `Pages` and filter by `Parent: Faculty`. This will generate an auto-updating grid of all faculty members (including adjuncts) that will stay current forever.
 
@@ -291,7 +258,7 @@ This shows faculty list in sidebar on any page.
 
 ### Quick Steps:
 1. ✅ Parent page & Faculty Pages imported via XML
-2. ✅ Duplicate menu items cleaned up
+2. ✅ Static submenus deleted from main navigation
 3. Create Category Pages (Full-Time, Adjunct, Affiliated)
 4. Add Category Pages to dropdown menu
 5. Update Faculty Directory with Elementor Posts Widget
@@ -300,6 +267,35 @@ This shows faculty list in sidebar on any page.
 
 **Time Required**:
 - Directory Updates & Elementor Setup: 30 minutes
+
+---
+
+## Future Reference: Adding a New Faculty Member
+
+Since the directory is now driven dynamically by Elementor and the ACF "Faculty Type" field, **you do NOT need to update the navigation menu when someone joins or leaves the department.**
+
+Simply follow these steps to add a new faculty member, and they will automatically appear in the correct directory:
+
+1. **Pages** → **Add New**
+2. **Set Title**: Use faculty member's name
+   - Example: `John Doe`
+3. **Add Content**: Add their bio, photo, and details.
+4. **Assign Faculty Type**: Using the ACF field "Faculty Type" setup in the Implementation Guide, select Full-time, Adjunct, or Affiliated.
+5. **Set Parent Page**:
+   - In the right sidebar, find **"Page Attributes"** panel
+   - Under **"Parent"**, select **"Faculty"**
+   - This makes it a child of the Faculty page
+6. **Set Permalink**:
+   - Click "Edit" next to permalink
+   - Should be: `/faculty/john-doe/`
+   - WordPress automatically adds the parent slug
+7. **Set Featured Image** (optional):
+   - Click "Set featured image"
+   - Upload faculty photo if available
+8. **Set Author**:
+   - In right sidebar, **"Author"** dropdown
+   - Select the faculty member (if account exists)
+9. **Publish**
 
 ---
 
