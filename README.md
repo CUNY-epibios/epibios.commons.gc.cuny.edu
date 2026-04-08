@@ -6,7 +6,7 @@ This folder contains everything needed for you (the Department Chair) and your a
 
 ## What We Have Completed
 The site is now live at [epibios.commons.gc.cuny.edu](https://epibios.commons.gc.cuny.edu/) and the following are fully implemented:
-* **Full-time Faculty Pages:** 13 faculty pages have been imported and published. (Note: Lisa Hitch's page is missing from the export).
+* **Full-time Faculty Pages:** All 13 full-time faculty pages have been imported and published.
 * **Core Pages:** The *Course Evaluations* and *Student Handbook* pages are published and linked in the main menu.
 * **Architecture:** A clean site structure mapping out where everything goes (`SITE_MAP.md`).
 * **Tool Selection:** We verified which CUNY Commons plugins are available for free to achieve our exact goals without external costs (`CUNY_PLUGIN_ANALYSIS.md`).
@@ -15,8 +15,9 @@ The site is now live at [epibios.commons.gc.cuny.edu](https://epibios.commons.gc
 
 Here are your exact next steps to finish the site:
 
-1. **Add Missing Faculty Page (Assistant)**
-   * Create and publish the faculty page for Lisa Hitch.
+1. **Add Adjunct and Affiliated Faculty Pages (Assistant)**
+   * Create and publish pages for adjunct faculty (including Lisa Hitch) and affiliated faculty.
+   * Add a "Faculty Type" field (Full-time, Adjunct, Affiliated) using Advanced Custom Fields (ACF) to the Faculty pages so this property can be displayed and used for filtering on the Faculty Directory landing page.
 
 2. **Add Student Research & Events (Assistant)**
    * **Research/Student Research:** The "Research" page is currently in draft status. Finish it and publish it. Consider using the Custom Post Type showcase outlined in `STUDENT_SUCCESS_GUIDE.md` to set up student success posts. Add it to the navigation menu.

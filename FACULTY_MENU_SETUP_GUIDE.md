@@ -5,26 +5,16 @@
 
 ## Overview
 
-This guide shows you how to create a Faculty menu with a dropdown containing all 14 individual faculty members.
+This guide shows you how to create a Faculty menu that accommodates our three types of faculty: Full-time, Adjunct, and Affiliated. Because we have many adjunct faculty, listing every single person in the dropdown may be too long. Instead, we'll create a dropdown grouped by faculty type.
 
 **Result**:
 ```
 Faculty ▼
-├── Luisa N. Borrell
-├── Ayman El-Mohandes
-├── Renee Goodwin
-├── Lisa Hitch
-├── Heidi E. Jones
-├── Elizabeth Kelvin
-├── Denis Nash
-├── Sehyun Oh
-├── Nash Rochman
-├── Zach Shahn
-├── Chloe Teasdale
-├── Levi Waldron
-├── Katarzyna E Wyka
-└── Constantin Yiannoutsos
+├── Full-Time Faculty
+├── Adjunct Faculty
+└── Affiliated Faculty
 ```
+*(Users click these links to view a filtered directory for that faculty type, and from there can click into individual faculty profiles).*
 
 ---
 
@@ -47,7 +37,7 @@ This method automatically creates the dropdown menu structure based on parent-ch
 
 ### Step 2: Import Missing Faculty Pages (Child Pages)
 
-13 of the 14 faculty pages have already been imported. For the remaining faculty member (Lisa Hitch), and any future faculty:
+13 full-time faculty pages have already been imported. For adjunct faculty (such as Lisa Hitch), affiliated faculty, and any future faculty:
 
 1. **Pages** → **Add New**
 
@@ -56,27 +46,31 @@ This method automatically creates the dropdown menu structure based on parent-ch
 
 3. **Add Content**: Add their bio, photo, and details.
 
-4. **Set Parent Page**:
+4. **Assign Faculty Type**: Using the ACF field "Faculty Type" setup in the Implementation Guide, select Full-time, Adjunct, or Affiliated.
+
+5. **Set Parent Page**:
    - In the right sidebar, find **"Page Attributes"** panel
    - Under **"Parent"**, select **"Faculty"**
    - This makes it a child of the Faculty page
 
-5. **Set Permalink**:
+6. **Set Permalink**:
    - Click "Edit" next to permalink
    - Should be: `/faculty/lisa-hitch/`
    - WordPress automatically adds the parent slug
 
-6. **Set Featured Image** (optional):
+7. **Set Featured Image** (optional):
    - Click "Set featured image"
    - Upload faculty photo if available
 
-7. **Set Author**:
+8. **Set Author**:
    - In right sidebar, **"Author"** dropdown
    - Select the faculty member (if account exists)
 
-8. **Publish**
+9. **Publish**
 
 ### Step 3: Create the Navigation Menu
+
+Because listing potentially dozens of faculty in a single dropdown is bad for usability, we recommend grouping them by type.
 
 1. **Go to**: Appearance → Menus
 
@@ -91,35 +85,16 @@ This method automatically creates the dropdown menu structure based on parent-ch
    - Check the box next to **"Faculty"**
    - Click "Add to Menu"
 
-4. **Add Individual Faculty Pages**:
-   - Still in **"Pages"** section
-   - Check boxes for all 14 individual faculty pages
-   - Click "Add to Menu"
+4. **Add Category Pages (or Custom Links) for the Dropdown**:
+   - You can create separate pages for "Full-Time Faculty", "Adjunct Faculty", and "Affiliated Faculty" that use Elementor/ACF to filter and display the respective faculty.
+   - Add these three pages to the menu.
 
 5. **Create Hierarchy by Dragging**:
    - In the menu structure (right side)
-   - **Drag** each individual faculty page **slightly to the right** under "Faculty"
+   - **Drag** each category page **slightly to the right** under "Faculty"
    - When positioned correctly, you'll see them indented
-   - This creates the dropdown
 
-6. **Reorder Faculty Names** (optional):
-   - Drag faculty pages up/down to reorder
-   - Alphabetical by last name is typical:
-     - Borrell, Luisa N.
-     - El-Mohandes, Ayman
-     - Goodwin, Renee
-     - Jones, Heidi E.
-     - Kelvin, Elizabeth
-     - Nash, Denis
-     - Oh, Sehyun
-     - Rochman, Nash
-     - Shahn, Zach
-     - Teasdale, Chloe
-     - Waldron, Levi
-     - Wyka, Katarzyna E
-     - Yiannoutsos, Constantin
-
-7. **Save Menu**
+6. **Save Menu**
 
 ---
 
@@ -137,23 +112,16 @@ If your theme doesn't automatically show child pages in dropdown:
    - Find "Faculty" parent page
    - Add to menu
 
-3. **Add Custom Link** (optional directory page):
-   - Click "Custom Links" in left column
-   - URL: `/faculty/`
-   - Link Text: `Faculty Directory` or `All Faculty`
-   - Add to Menu
-   - Drag slightly right under "Faculty" (makes it first submenu item)
-
-4. **Add All Faculty Pages**:
-   - Select all 14 individual faculty pages
+3. **Add Category Links**:
+   - Create Custom Links or select your category Pages (Full-Time, Adjunct, Affiliated).
    - Add to Menu
    - Drag each **slightly to the right** under "Faculty"
    - They should indent to show they're sub-items
 
-5. **Reorder**:
+4. **Reorder**:
    - Drag to alphabetize or order as desired
 
-6. **Save Menu**
+5. **Save Menu**
 
 ---
 
@@ -282,26 +250,35 @@ Create this content for the main **Faculty** page:
 
 ---
 
-## Quick Reference: List of All 14 Faculty Members
+## Quick Reference: List of Faculty Members
 
-Ensure all are present and correctly linked:
+Ensure all are present, correctly linked, and assigned the proper "Faculty Type":
 
-| # | Faculty Name | File | URL Slug |
-|---|--------------|------|----------|
-| 1 | Luisa N. Borrell | `luisa-n-borrell.html` | `/faculty/luisa-n-borrell/` |
-| 2 | Ayman El-Mohandes | `ayman-el-mohandes.html` | `/faculty/ayman-el-mohandes/` |
-| 3 | Renee Goodwin | `renee-goodwin.html` | `/faculty/renee-goodwin/` |
-| 4 | Lisa Hitch | `lisa-hitch.html` | `/faculty/lisa-hitch/` |
-| 5 | Heidi E. Jones | `heidi-e-jones.html` | `/faculty/heidi-e-jones/` |
-| 6 | Elizabeth Kelvin | `elizabeth-kelvin.html` | `/faculty/elizabeth-kelvin/` |
-| 7 | Denis Nash | `denis-nash.html` | `/faculty/denis-nash/` |
-| 8 | Sehyun Oh | `sehyun-oh.html` | `/faculty/sehyun-oh/` |
-| 9 | Nash Rochman | `nash-rochman.html` | `/faculty/nash-rochman/` |
-| 10 | Zach Shahn | `zach-shahn.html` | `/faculty/zach-shahn/` |
-| 11 | Chloe Teasdale | `chloe-teasdale.html` | `/faculty/chloe-teasdale/` |
-| 12 | Levi Waldron | `levi-waldron.html` | `/faculty/levi-waldron/` |
-| 13 | Katarzyna E Wyka | `katarzyna-e-wyka.html` | `/faculty/katarzyna-e-wyka/` |
-| 14 | Constantin Yiannoutsos | `constantin-yiannoutsos.html` | `/faculty/constantin-yiannoutsos/` |
+### Full-time Faculty (13)
+| # | Faculty Name | URL Slug |
+|---|--------------|----------|
+| 1 | Luisa N. Borrell | `/faculty/luisa-n-borrell/` |
+| 2 | Ayman El-Mohandes | `/faculty/ayman-el-mohandes/` |
+| 3 | Renee Goodwin | `/faculty/renee-goodwin/` |
+| 4 | Heidi E. Jones | `/faculty/heidi-e-jones/` |
+| 5 | Elizabeth Kelvin | `/faculty/elizabeth-kelvin/` |
+| 6 | Denis Nash | `/faculty/denis-nash/` |
+| 7 | Sehyun Oh | `/faculty/sehyun-oh/` |
+| 8 | Nash Rochman | `/faculty/nash-rochman/` |
+| 9 | Zach Shahn | `/faculty/zach-shahn/` |
+| 10 | Chloe Teasdale | `/faculty/chloe-teasdale/` |
+| 11 | Levi Waldron | `/faculty/levi-waldron/` |
+| 12 | Katarzyna E Wyka | `/faculty/katarzyna-e-wyka/` |
+| 13 | Constantin Yiannoutsos | `/faculty/constantin-yiannoutsos/` |
+
+### Adjunct Faculty (Example)
+| # | Faculty Name | URL Slug |
+|---|--------------|----------|
+| 1 | Lisa Hitch | `/faculty/lisa-hitch/` |
+*(Add other adjuncts here as they are imported)*
+
+### Affiliated Faculty
+*(Add affiliated faculty here as they are imported)*
 
 ---
 
@@ -371,15 +348,14 @@ This shows faculty list in sidebar on any page.
 
 1. ✅ **Hover over "Faculty"** in main menu
    - Dropdown should appear
-   - All 14 names should show
+   - Full-Time, Adjunct, and Affiliated categories should show
 
-2. ✅ **Click individual faculty names**
-   - Should go to correct faculty page
-   - URL should be `/faculty/name/`
+2. ✅ **Click individual category links**
+   - Should go to the filtered faculty directory page for that type
 
 3. ✅ **Click "Faculty" parent item**
-   - Should go to Faculty Directory page
-   - Page should list all faculty with links
+   - Should go to the main Faculty Directory page
+   - Page should list all faculty with links, separated by type
 
 4. ✅ **Check mobile view**
    - Menu should collapse to hamburger

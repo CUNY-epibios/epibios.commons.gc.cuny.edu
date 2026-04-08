@@ -10,22 +10,13 @@ Home (/)
 │   └── Mission & Vision
 │
 ├── Faculty ▼ (Dropdown Menu)
-│   ├── Faculty Directory (landing page with grid/list)
-│   └── Individual Faculty Pages:
-│       ├── /faculty/luisa-n-borrell/
-│       ├── /faculty/ayman-el-mohandes/
-│       ├── /faculty/renee-goodwin/
-│       ├── /faculty/lisa-hitch/
-│       ├── /faculty/heidi-e-jones/
-│       ├── /faculty/elizabeth-kelvin/
-│       ├── /faculty/denis-nash/
-│       ├── /faculty/sehyun-oh/
-│       ├── /faculty/nash-rochman/
-│       ├── /faculty/zach-shahn/
-│       ├── /faculty/chloe-teasdale/
-│       ├── /faculty/levi-waldron/
-│       ├── /faculty/katarzyna-e-wyka/
-│       └── /faculty/constantin-yiannoutsos/
+│   ├── Full-Time Faculty (landing page filtered by type)
+│   ├── Adjunct Faculty (landing page filtered by type)
+│   ├── Affiliated Faculty (landing page filtered by type)
+│   └── Individual Faculty Pages (Examples):
+│       ├── /faculty/luisa-n-borrell/ (Full-Time)
+│       ├── /faculty/lisa-hitch/ (Adjunct)
+│       └── ...
 │
 ├── Students
 │   ├── Student Research (consolidated page)
@@ -52,8 +43,9 @@ Home (/)
 1. **Home**
 2. **About**
 3. **Faculty** (dropdown)
-   - Faculty Directory
-   - [Individual faculty names as submenu items]
+   - Full-Time Faculty
+   - Adjunct Faculty
+   - Affiliated Faculty
 4. **Students**
    - Student Research
    - Success Stories
@@ -70,13 +62,14 @@ Home (/)
 
 ### Faculty Section
 - **Parent Page**: `/faculty/` (Faculty Directory)
-  - Display grid/card layout with faculty photos
-  - Quick links to individual pages
-  - Sortable/filterable by research area
+  - Acts as a container for all faculty.
+  - Custom ACF field `Faculty Type` added to all child pages (Full-time, Adjunct, Affiliated).
+  - Use Elementor or an archive view to display grid/card layouts filtered by `Faculty Type` and research area.
 
 - **Child Pages**: Individual faculty pages at `/faculty/[slug]/`
   - Each page includes:
     - Name and title
+    - Faculty Type metadata
     - Profile links (CUNY SPH, ISPH, Google Scholar, ORCID, personal/lab websites)
     - Bio and research interests
     - Publications section with shortcode: `[schopufe_publications user_id="SCHOLAR_ID" cache_hours=24]`

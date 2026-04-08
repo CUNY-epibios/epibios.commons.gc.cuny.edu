@@ -106,14 +106,27 @@ We analyzed the **612 plugins available in CUNY Academic Commons** and updated a
 
 #### Import Missing Faculty Pages:
 ```bash
-13 of the 14 faculty pages have already been imported.
-For the remaining faculty member (Lisa Hitch):
+All 13 full-time faculty pages have already been imported.
+For adjunct faculty (including Lisa Hitch) and affiliated faculty:
 1. Create new page: Pages → Add New
 2. Set parent page to "Faculty"
 3. Add content for the faculty member
 4. Add faculty member as Author
 5. Set URL slug
 6. Publish
+```
+
+#### Set Up Faculty Types (ACF):
+```
+1. Custom Fields → Add New
+2. Title: "Faculty Settings"
+3. Add Field: 
+   - Label: "Faculty Type"
+   - Type: Select
+   - Choices: Full-Time, Adjunct, Affiliated
+4. Location: Post Type is equal to Page AND Page Parent is equal to "Faculty"
+5. Publish
+6. Edit all existing faculty pages to assign their Faculty Type.
 ```
 
 #### Set Up Faculty Accounts:
@@ -348,7 +361,9 @@ Since security plugins may not be available:
 
 ### Before Going Live:
 ```
-□ 13 faculty pages imported (Lisa Hitch pending)
+□ All full-time faculty pages imported
+□ Adjunct and affiliated faculty pages imported
+□ Faculty Type ACF field created and assigned to all faculty
 □ Faculty user accounts created
 □ Elementor frontend editing tested
 □ Course evaluation form tested
