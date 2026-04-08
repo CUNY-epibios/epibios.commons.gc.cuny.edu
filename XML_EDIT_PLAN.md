@@ -34,8 +34,8 @@ Gemini will execute a Python script to perform the following operations on the X
 
 ### E. Faculty Photos
 - A set of raw faculty photos has been processed (cropped to a consistent 1:1 square ratio and resized to 400x400 pixels) and saved in the `photos/` directory.
-- Because local files cannot be embedded directly into a WordPress XML import, the generated `<content:encoded>` block for each new faculty member will include a placeholder block (e.g., `<!-- IMAGE UPLOAD REQUIRED: photos/Name.jpg -->`).
-- After the XML import, the web assistant will batch-upload the contents of the `photos/` folder to the WordPress Media Library and set them as the "Featured Image" for the respective faculty pages.
+- Because these photos were pre-uploaded to the CUNY Commons Media Library, the XML file has been updated to automatically generate WordPress attachment nodes pointing directly to their S3 URLs (e.g., `https://s3.amazonaws.com/files.commons.gc.cuny.edu/wp-content/blogs.dir/49129/files/2026/04/filename.jpg`).
+- The `_thumbnail_id` meta field has been injected into all new faculty profiles, meaning **WordPress will automatically assign the featured images upon import!** Just make sure to check the "Download and import file attachments" box.
 
 ---
 

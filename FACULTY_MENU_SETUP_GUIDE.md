@@ -5,9 +5,14 @@
 
 ## Overview
 
-This guide shows you how to create a Faculty menu that accommodates our three types of faculty: Full-time, Adjunct, and Affiliated. Because we have many adjunct faculty, listing every single person in the dropdown may be too long. Instead, we'll create a dropdown grouped by faculty type.
+The bulk of the heavy lifting for the Faculty section has already been completed:
+- The main `/faculty/` parent page exists.
+- All 13 Full-time faculty, 15 Adjunct faculty, and 1 Affiliated faculty profiles have been imported via XML as child pages.
+- The duplicated navigation menu items caused by the XML imports have been cleaned up.
 
-**Result**:
+The final steps are to ensure the navigation menu is structured by "Faculty Type" rather than a massive list of names, and to configure Elementor to display the directory and headshots correctly.
+
+**Goal Result for the Menu**:
 ```
 Faculty ▼
 ├── Full-Time Faculty
@@ -18,26 +23,9 @@ Faculty ▼
 
 ---
 
-## Method 1: Using Page Hierarchy (RECOMMENDED)
+## Step 1: Adding a New Faculty Member Manually
 
-This method automatically creates the dropdown menu structure based on parent-child page relationships.
-
-### Step 1: Create the Faculty Directory (Parent Page)
-
-1. **Log in to WordPress** → Go to **Pages** → **Add New**
-
-2. **Create Parent Page**:
-   ```
-   Title: Faculty
-   Permalink: /faculty/
-   Content: (See faculty_directory_page.html below)
-   ```
-
-3. **Publish** the page
-
-### Step 2: Import Missing Faculty Pages (Child Pages)
-
-13 full-time faculty pages have already been imported. For adjunct faculty (such as Lisa Hitch), affiliated faculty, and any future faculty:
+Since the initial bulk import is finished, you only need to follow these steps when a **new** faculty member joins the department:
 
 1. **Pages** → **Add New**
 
@@ -68,22 +56,17 @@ This method automatically creates the dropdown menu structure based on parent-ch
 
 9. **Publish**
 
-### Step 3: Create the Navigation Menu
+## Step 2: Update the Navigation Menu
 
-Because listing potentially dozens of faculty in a single dropdown is bad for usability, we recommend grouping them by type.
+Because listing potentially dozens of faculty in a single dropdown is bad for usability, we recommend grouping them by type. 
 
 1. **Go to**: Appearance → Menus
 
-2. **Create New Menu**:
-   - Click "create a new menu"
-   - Menu Name: `Main Menu` (or whatever your theme uses)
-   - Check "Primary Menu" location
-   - Click "Create Menu"
+2. **Select the Main Menu**:
+   - Ensure you are editing the active primary navigation menu.
 
-3. **Add Faculty Parent Page**:
-   - In left column, expand **"Pages"**
-   - Check the box next to **"Faculty"**
-   - Click "Add to Menu"
+3. **Verify the Faculty Parent Page**:
+   - Make sure the main **"Faculty"** page is in the menu.
 
 4. **Add Category Pages (or Custom Links) for the Dropdown**:
    - You can create separate pages for "Full-Time Faculty", "Adjunct Faculty", and "Affiliated Faculty" that use Elementor/ACF to filter and display the respective faculty.
@@ -98,155 +81,49 @@ Because listing potentially dozens of faculty in a single dropdown is bad for us
 
 ---
 
-## Method 2: Manual Menu Setup (If Page Hierarchy Doesn't Work)
+## Step 3: Displaying the Faculty Directory & Featured Images
 
-If your theme doesn't automatically show child pages in dropdown:
+By default, the imported XML sets up the data correctly in the backend, but your WordPress theme may not render it automatically. The assistant must address two critical display issues:
 
-### Step 1: Same as Method 1 (Create all pages)
+### Issue A: The Faculty Directory Only Shows Full-Time Faculty
+**Problem:** The main `/faculty/` page consists of static HTML from the legacy site. Simply importing new adjunct/affiliated child pages does not automatically rewrite that static HTML to include them.
+**Solution:**
+1. Edit the "Faculty" page with Elementor.
+2. Delete the static legacy HTML grid.
+3. Drag in a dynamic **"Posts"** or **"Portfolio"** widget.
+4. Set the query source to `Pages` and filter by `Parent: Faculty`. This will generate an auto-updating grid of all faculty members (including adjuncts) that will stay current forever.
 
-### Step 2: Manually Build Menu Hierarchy
-
-1. **Appearance** → **Menus**
-
-2. **Add Faculty to Menu**:
-   - Find "Faculty" parent page
-   - Add to menu
-
-3. **Add Category Links**:
-   - Create Custom Links or select your category Pages (Full-Time, Adjunct, Affiliated).
-   - Add to Menu
-   - Drag each **slightly to the right** under "Faculty"
-   - They should indent to show they're sub-items
-
-4. **Reorder**:
-   - Drag to alphabetize or order as desired
-
-5. **Save Menu**
-
----
-
-## Method 3: Using CSS Dropdown (If Theme Doesn't Support)
-
-If your theme doesn't support dropdown menus natively, you may need to add CSS.
-
-Most modern WordPress themes (including those on CUNY Commons) support dropdown menus automatically when you indent menu items.
+### Issue B: Featured Images (Headshots) Are Missing from Faculty Pages
+**Problem:** The XML import correctly assigns the 400x400 headshots as the "Featured Image" for each faculty member (visible in the right sidebar). However, many CUNY Commons themes do not automatically print the Featured Image at the top of standard "Pages."
+**Solution (Elementor Pro Required):**
+1. Go to **Templates** → **Theme Builder**.
+2. Add a new **Single Page** template.
+3. Drag a **Featured Image** widget to the top of the layout, followed by a **Post Content** widget underneath it.
+4. Set the Display Conditions to `Include: Child Of: Faculty`.
+5. Publish. This instantly forces the theme to render the headshots for all 30+ faculty members without editing their pages one by one!
 
 ---
 
 ## Faculty Directory Landing Page Content
 
-Create this content for the main **Faculty** page:
+As noted in Issue A above, the `Faculty` page should **not** contain a static HTML grid of names, because then every new adjunct or affiliated faculty member would need to be typed in by hand.
 
-```html
-<!-- wp:heading -->
-<h2 class="wp-block-heading">Our Faculty</h2>
-<!-- /wp:heading -->
+Instead, the human assistant should use **Elementor Pro's Posts Widget** to create a dynamic directory:
 
-<!-- wp:paragraph -->
-<p>The Department of Epidemiology and Biostatistics is home to award-winning faculty conducting cutting-edge research in population health, infectious diseases, biostatistics, cancer genomics, and more. Our faculty are committed to rigorous scientific inquiry, mentoring the next generation of public health leaders, and addressing health inequities.</p>
-<!-- /wp:paragraph -->
-
-<!-- wp:separator -->
-<hr class="wp-block-separator has-alpha-channel-opacity"/>
-<!-- /wp:separator -->
-
-<!-- wp:heading {"level":3} -->
-<h3 class="wp-block-heading">Faculty Directory</h3>
-<!-- /wp:heading -->
-
-<!-- wp:paragraph -->
-<p>Click on a faculty member's name to view their profile, including education, research interests, and publications.</p>
-<!-- /wp:paragraph -->
-
-<!-- wp:columns {"columns":2} -->
-<div class="wp-block-columns">
-<!-- wp:column -->
-<div class="wp-block-column">
-
-<!-- wp:heading {"level":4} -->
-<h4 class="wp-block-heading">Professors & Distinguished Professors</h4>
-<!-- /wp:heading -->
-
-<!-- wp:list -->
-<ul>
-<li><a href="/faculty/luisa-n-borrell/">Luisa N. Borrell</a>, Distinguished Professor</li>
-<li><a href="/faculty/ayman-el-mohandes/">Ayman El-Mohandes</a>, Professor and Dean</li>
-<li><a href="/faculty/renee-goodwin/">Renee Goodwin</a>, Distinguished Professor</li>
-<li><a href="/faculty/heidi-e-jones/">Heidi E. Jones</a>, Professor</li>
-<li><a href="/faculty/denis-nash/">Denis Nash</a>, Distinguished Professor</li>
-<li><a href="/faculty/levi-waldron/">Levi Waldron</a>, Professor and Department Chairperson</li>
-<li><a href="/faculty/constantin-yiannoutsos/">Constantin Yiannoutsos</a>, Professor</li>
-</ul>
-<!-- /wp:list -->
-
-</div>
-<!-- /wp:column -->
-
-<!-- wp:column -->
-<div class="wp-block-column">
-
-<!-- wp:heading {"level":4} -->
-<h4 class="wp-block-heading">Associate & Assistant Professors</h4>
-<!-- /wp:heading -->
-
-<!-- wp:list -->
-<ul>
-<li><a href="/faculty/elizabeth-kelvin/">Elizabeth Kelvin</a>, Associate Professor</li>
-<li><a href="/faculty/chloe-teasdale/">Chloe Teasdale</a>, Associate Professor</li>
-<li><a href="/faculty/katarzyna-e-wyka/">Katarzyna E Wyka</a>, Associate Professor</li>
-<li><a href="/faculty/sehyun-oh/">Sehyun Oh</a>, Assistant Professor</li>
-<li><a href="/faculty/nash-rochman/">Nash Rochman</a>, Assistant Professor</li>
-<li><a href="/faculty/zach-shahn/">Zach Shahn</a>, Assistant Professor</li>
-</ul>
-<!-- /wp:list -->
-
-<!-- wp:heading {"level":4} -->
-<h4 class="wp-block-heading">Lecturers</h4>
-<!-- /wp:heading -->
-
-<!-- wp:list -->
-<ul>
-<li><a href="/faculty/lisa-hitch/">Lisa Hitch</a>, Adjunct Lecturer</li>
-</ul>
-<!-- /wp:list -->
-
-</div>
-<!-- /wp:column -->
-</div>
-<!-- /wp:columns -->
-
-<!-- wp:separator -->
-<hr class="wp-block-separator has-alpha-channel-opacity"/>
-<!-- /wp:separator -->
-
-<!-- wp:heading {"level":3} -->
-<h3 class="wp-block-heading">Research Areas</h3>
-<!-- /wp:heading -->
-
-<!-- wp:paragraph -->
-<p>Our faculty expertise spans:</p>
-<!-- /wp:paragraph -->
-
-<!-- wp:list -->
-<ul>
-<li><strong>Infectious Disease Epidemiology</strong> – HIV/AIDS, COVID-19, emerging pathogens, global health</li>
-<li><strong>Social Epidemiology</strong> – Health disparities, structural racism, social determinants of health</li>
-<li><strong>Biostatistics & Data Science</strong> – Causal inference, machine learning, bioinformatics, computational biology</li>
-<li><strong>Reproductive & Maternal Health</strong> – Pregnancy outcomes, contraception, adolescent health</li>
-<li><strong>Mental Health & Substance Use</strong> – Depression, anxiety, tobacco, cannabis, drug policy</li>
-<li><strong>Cancer Epidemiology & Genomics</strong> – Cancer prevention, microbiome research, precision medicine</li>
-<li><strong>Statistical Methods</strong> – Longitudinal data analysis, survival analysis, clinical trials</li>
-</ul>
-<!-- /wp:list -->
-
-<!-- wp:separator -->
-<hr class="wp-block-separator has-alpha-channel-opacity"/>
-<!-- /wp:separator -->
-
-<!-- wp:paragraph -->
-<p><strong>Interested in joining our faculty?</strong> View current <a href="https://sph.cuny.edu/about/employment/">job openings at CUNY SPH</a>.</p>
-<!-- /wp:paragraph -->
-```
+1. Edit the `Faculty` page.
+2. Add a text block at the top: *"The Department of Epidemiology and Biostatistics is home to award-winning faculty conducting cutting-edge research in population health, infectious diseases, biostatistics, cancer genomics, and more..."*
+3. Drag the **Posts** widget into the page.
+4. **Content Tab -> Query:**
+   - Source: `Pages`
+   - Include By: `Term`
+   - Term: `Parent -> Faculty`
+5. **Content Tab -> Layout:**
+   - Skin: `Cards`
+   - Columns: `3` or `4`
+   - Show Image: `Yes` (This automatically pulls the 400x400 headshots).
+   - Title: `Yes`
+   - Excerpt: `No`
+   - Read More: `No`
 
 ---
 
@@ -271,14 +148,29 @@ Ensure all are present, correctly linked, and assigned the proper "Faculty Type"
 | 12 | Katarzyna E Wyka | `/faculty/katarzyna-e-wyka/` |
 | 13 | Constantin Yiannoutsos | `/faculty/constantin-yiannoutsos/` |
 
-### Adjunct Faculty (Example)
+### Adjunct Faculty (15)
 | # | Faculty Name | URL Slug |
 |---|--------------|----------|
-| 1 | Lisa Hitch | `/faculty/lisa-hitch/` |
-*(Add other adjuncts here as they are imported)*
+| 1 | Fiona Fogarty | `/faculty/fiona-fogarty/` |
+| 2 | Amena El Harakeh | `/faculty/amena-el-harakeh/` |
+| 3 | Tony DeVito | `/faculty/tony-devito/` |
+| 4 | Priscilla Lopez D'Antico | `/faculty/priscilla-lopez-dantico/` |
+| 5 | Mukta Mohnani | `/faculty/mukta-mohnani/` |
+| 6 | David Goldfarb | `/faculty/david-goldfarb/` |
+| 7 | Rehana Rasul | `/faculty/rehana-rasul/` |
+| 8 | Jenny Shen | `/faculty/jenny-shen/` |
+| 9 | Madelyn Carlson | `/faculty/madelyn-carlson/` |
+| 10 | Jose Fernando Florez-Arango | `/faculty/jose-fernando-florez-arango/` |
+| 11 | Kimberly Sebek | `/faculty/kimberly-sebek/` |
+| 12 | Ludwig Geistlinger | `/faculty/ludwig-geistlinger/` |
+| 13 | Haoyan Zhong | `/faculty/haoyan-zhong/` |
+| 14 | Chloe Mirzayi | `/faculty/chloe-mirzayi/` |
+| 15 | Lisa Hitch | `/faculty/lisa-hitch/` |
 
-### Affiliated Faculty
-*(Add affiliated faculty here as they are imported)*
+### Affiliated Faculty (1)
+| # | Faculty Name | URL Slug |
+|---|--------------|----------|
+| 1 | Theresa Diaz | `/faculty/theresa-diaz/` |
 
 ---
 
@@ -398,19 +290,16 @@ This shows faculty list in sidebar on any page.
 ## Summary
 
 ### Quick Steps:
-1. ✅ Create "Faculty" parent page
-2. ✅ Import missing faculty pages as children
-3. ✅ Go to Appearance → Menus
-4. ✅ Add Faculty + all child pages to menu
-5. ✅ Indent child pages under Faculty
-6. ✅ Save menu
-7. ✅ Test dropdown!
+1. ✅ Parent page & Faculty Pages imported via XML
+2. ✅ Duplicate menu items cleaned up
+3. Create Category Pages (Full-Time, Adjunct, Affiliated)
+4. Add Category Pages to dropdown menu
+5. Update Faculty Directory with Elementor Posts Widget
+6. Apply Single Page Theme Builder template for Featured Images
+7. Test dropdown!
 
 **Time Required**:
-- Parent page: 15 minutes
-- Missing faculty pages: 5-10 minutes per page
-- Menu setup: 15 minutes
-- **Total: ~30-45 minutes**
+- Directory Updates & Elementor Setup: 30 minutes
 
 ---
 
