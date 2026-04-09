@@ -5,10 +5,6 @@
 ```
 Home (/)
 │
-├── About
-│   ├── Department Overview
-│   └── Mission & Vision
-│
 ├── Faculty ▼ (Dropdown Menu)
 │   ├── Full-Time Faculty (landing page filtered by type)
 │   ├── Adjunct Faculty (landing page filtered by type)
