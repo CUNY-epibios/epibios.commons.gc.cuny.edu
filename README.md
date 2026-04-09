@@ -14,7 +14,7 @@ The site is now live at [epibios.commons.gc.cuny.edu](https://epibios.commons.gc
 Here are next steps to finish the site:
 
 1. **Complete Faculty Setup**
-   * All 30+ faculty profiles, including their Headshots and "Faculty Type" metadata (Full-time, Adjunct, Affiliated), have been fully imported.
+   * Add headshots as "Featured Image" for full-time and affiliated faculty pages (already done for adjunct faculty).
    * Offer faculty access to edit their pages, then manually invite them via the CUNY Commons "Users -> Add New" interface using their official campus emails. Once they activate their accounts, you can bulk-reassign authorship of their pages to them.
    * Review [`FACULTY_MENU_SETUP_GUIDE.md`](FACULTY_MENU_SETUP_GUIDE.md) for Elementor layout instructions for the main Faculty directory page.
 
